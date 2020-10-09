@@ -25,7 +25,35 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Audio
 PRODUCT_PACKAGES += \
-    libvolumelistener
+    libvolumelistener \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libqcompostprocbundle
+
+PRODUCT_PACKAGES += \
+    audio.primary.atoll \
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
+    libaudio-resampler \
+    libtinycompress
+
+PRODUCT_PACKAGES += \
+    android.hardware.audio@6.0-impl:32 \
+    android.hardware.audio.effect@6.0-impl:32 \
+    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.audio@2.0-service
+
+PRODUCT_PACKAGES += \
+    liba2dpoffload \
+    libbatterylistener \
+    libcirrusspkrprot \
+    libcomprcapture \
+    libexthwplugin \
+    libhdmiedid \
+    libhfp \
+    libsndmonitor \
+    libspkrprot
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
@@ -55,7 +83,14 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    audio.bluetooth.default \
+    libbthost_if \
     BluetoothQti
+
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio@2.0-impl \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
@@ -81,12 +116,18 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
+# Display
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # Doze
 PRODUCT_PACKAGES += \
     XiaomiDoze
 
 # DRM
 PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
     android.hardware.drm@1.3-service.clearkey
 
 # Fastbootd
@@ -109,6 +150,11 @@ PRODUCT_COPY_FILES += \
 # Graphics
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl-qti \
+    android.hardware.health@2.1-service
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -178,7 +224,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.xiaomi_sm6250-libperfmgr \
+    android.hardware.power-service.xiaomi_sm6250-libperfmgr \
     android.hardware.power.stats@1.0-service.xiaomi_sm6250
 
 PRODUCT_COPY_FILES += \
@@ -202,8 +248,8 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl-legacy \
-    android.hardware.sensors@1.0-service.legacy
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
@@ -221,6 +267,7 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/google/interfaces \
     hardware/google/pixel \
     hardware/xiaomi \
     vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
@@ -265,6 +312,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.vibrator.service
+
 # VNDK
 # FIXME: master: compat for libprotobuf
 # See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
@@ -288,6 +339,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     libwifi-hal-qcom \
     libwpa_client \
+    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 

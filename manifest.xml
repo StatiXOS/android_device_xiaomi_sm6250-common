@@ -1,23 +1,23 @@
-<manifest version="1.0" type="device" target-level="3">
+<manifest version="1.0" type="device" target-level="4">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
-        <version>5.0</version>
+        <version>6.0</version>
         <interface>
             <name>IDevicesFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@5.0::IDevicesFactory/default</fqname>
+        <fqname>@6.0::IDevicesFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
         <transport>hwbinder</transport>
-        <version>5.0</version>
+        <version>6.0</version>
         <interface>
             <name>IEffectsFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@5.0::IEffectsFactory/default</fqname>
+        <fqname>@6.0::IEffectsFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.biometrics.fingerprint</name>
@@ -58,16 +58,6 @@
             <instance>legacy/0</instance>
         </interface>
         <fqname>@2.4::ICameraProvider/legacy/0</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.configstore</name>
-        <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>ISurfaceFlingerConfigs</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.1::ISurfaceFlingerConfigs/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.drm</name>
@@ -139,16 +129,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@2.1::IMapper/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.health</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>IHealth</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::IHealth/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.ir</name>
@@ -290,16 +270,6 @@
         <fqname>@1.0::IOffloadControl/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.thermal</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IThermal</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IThermal/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.usb</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -308,16 +278,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::IUsb/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.vibrator</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
-        <interface>
-            <name>IVibrator</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.2::IVibrator/default</fqname>
     </hal>
     <hal format="hidl">
         <name>com.fingerprints.extension</name>
