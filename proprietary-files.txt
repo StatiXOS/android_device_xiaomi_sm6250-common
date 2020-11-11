@@ -819,7 +819,6 @@ vendor/lib/libopus.so
 vendor/lib/libpdmapper.so
 vendor/lib/libpdnotifier.so
 vendor/lib/libperipheral_client.so
--vendor/lib/libplatformconfig.so
 vendor/lib/libq3dtools_adreno.so
 vendor/lib/libqcbor.so
 vendor/lib/libqcci_legacy.so
@@ -1434,7 +1433,6 @@ vendor/lib64/libops.so
 vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
 vendor/lib64/libperipheral_client.so
--vendor/lib64/libplatformconfig.so
 vendor/lib64/libprekill.so
 vendor/lib64/libq3dtools_adreno.so
 vendor/lib64/libqcbor.so
