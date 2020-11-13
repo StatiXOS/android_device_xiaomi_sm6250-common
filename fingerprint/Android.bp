@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2020 The LineageOS Project
+// Copyright (C) 2017-2018 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,16 +13,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-cc_library_shared {
-    name: "libshim_megvii",
-
+cc_binary {
+    name: "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6250",
+    relative_install_path: "hw",
+    defaults: ["hidl_defaults"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6250.rc"],
+    srcs: ["service.cpp", "BiometricsFingerprint.cpp"],
+    shared_libs: [
+        "libbase",
+        "libcutils",
+        "libhardware",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+        "android.hardware.biometrics.fingerprint@2.1",
+    ],
     proprietary: true,
-    srcs: ["megvii_shim.cpp"],
-}
-
-cc_library {
-    name: "libc++demangle_vendor",
-    stem: "libc++demangle",
-    proprietary: true,
-    whole_static_libs: ["libc++demangle"]
 }
