@@ -86,7 +86,6 @@ product/lib64/vendor.qti.ims.callinfo@1.0.so
 product/lib64/vendor.qti.ims.rcsconfig@1.0.so
 product/lib64/vendor.qti.imsrtpservice@2.0.so
 product/lib64/vendor.qti.imsrtpservice@2.1.so
--product/priv-app/ims/ims.apk
 
 # MiSys
 vendor/bin/hw/vendor.xiaomi.hardware.misys@1.0-service
@@ -1444,3 +1443,7 @@ vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
 vendor/radio/qcril_database/upgrade/4_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql
+
+# Telephony - from LA.UM.9.1.r1-07000-SMxxx0.0
+system_ext/framework/qti-telephony-common.jar|695214c1294dc9a79ee48387140c9907203300d7
+-system_ext/priv-app/ims/ims.apk|d2e1bb9b56805e08f6fb35bee8c1d59035904e27
