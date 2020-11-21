@@ -116,7 +116,6 @@ PRODUCT_PACKAGES += \
     Snap
 
 PRODUCT_PACKAGES += \
-    libc++demangle_vendor \
     libshim_megvii
 
 PRODUCT_PACKAGES += \
